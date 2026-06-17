@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+
+.dust {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.15) 1px, transparent 1px);
+
+  background-size: 120px 120px;
+
+  animation: dustFloat 20s linear infinite;
+
+  pointer-events: none;
+}
+
+@keyframes dustFloat {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100px);
+  }
+}
