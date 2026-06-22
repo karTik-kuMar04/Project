@@ -1,10 +1,13 @@
 "use client";
 
 export default function AncientWheel() {
+  const round = (n: number) => Number(n.toFixed(2));
+
   const C = 400;
+
   const pt = (r: number, deg: number) => ({
-    x: C + r * Math.cos(((deg - 90) * Math.PI) / 180),
-    y: C + r * Math.sin(((deg - 90) * Math.PI) / 180),
+    x: round( C + r * Math.cos(((deg - 90) * Math.PI) / 180)),
+    y: round(C + r * Math.sin(((deg - 90) * Math.PI) / 180)),
   });
 
   const totalTriangles = 72;

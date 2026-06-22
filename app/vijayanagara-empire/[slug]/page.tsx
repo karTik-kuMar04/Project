@@ -3,23 +3,23 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Cinzel, Cormorant_Garamond } from "next/font/google";
-import { vedicSubpages } from "@/data/vedicPeriodData";
+import { vijayanagaraSubpages } from "@/data/vijayanagaraEmpireData";
 
 // Next.js 16/React 19 Instant Navigation configuration
 export const unstable_instant = {
   prefetch: "runtime",
   samples: [
-    { params: { slug: "origins" } },
-    { params: { slug: "tribes-kingdoms" } },
-    { params: { slug: "society" } },
-    { params: { slug: "religion" } },
-    { params: { slug: "literature" } },
-    { params: { slug: "end-of-vedic-age" } },
+    { params: { slug: "capital" } },
+    { params: { slug: "rulers" } },
+    { params: { slug: "military" } },
+    { params: { slug: "economy" } },
+    { params: { slug: "arts" } },
+    { params: { slug: "decline" } },
   ],
 };
 
 export async function generateStaticParams() {
-  return vedicSubpages.map((subpage) => ({
+  return vijayanagaraSubpages.map((subpage) => ({
     slug: subpage.id,
   }));
 }
@@ -30,10 +30,10 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const subpage = vedicSubpages.find((p) => p.id === slug);
+  const subpage = vijayanagaraSubpages.find((p) => p.id === slug);
   return {
-    title: subpage ? `${subpage.title} | Vedic Period` : "Vedic Period Archive",
-    description: subpage ? subpage.hook : "Detailed archaeological registry of the Vedic era.",
+    title: subpage ? `${subpage.title} | Vijayanagara Empire` : "Vijayanagara Empire Archive",
+    description: subpage ? subpage.hook : "Detailed historical registry of the Vijayanagara Empire.",
   };
 }
 
@@ -49,24 +49,24 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
 });
 
-export default async function VedicPeriodSubpage({
+export default async function VijayanagaraEmpireSubpage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const subpageIndex = vedicSubpages.findIndex((p) => p.id === slug);
+  const subpageIndex = vijayanagaraSubpages.findIndex((p) => p.id === slug);
   
   if (subpageIndex === -1) {
     notFound();
   }
 
-  const subpage = vedicSubpages[subpageIndex];
+  const subpage = vijayanagaraSubpages[subpageIndex];
   
   // Calculate next subpage for navigation footer
   const nextSubpage =
-    subpageIndex < vedicSubpages.length - 1
-      ? vedicSubpages[subpageIndex + 1]
+    subpageIndex < vijayanagaraSubpages.length - 1
+      ? vijayanagaraSubpages[subpageIndex + 1]
       : null;
 
   return (
@@ -91,8 +91,8 @@ export default async function VedicPeriodSubpage({
             Home
           </Link>
           <span className="text-stone-700">/</span>
-          <Link href="/vedic-period" className="hover:text-[#ebd6bd] transition-colors">
-            Vedic Period
+          <Link href="/vijayanagara-empire" className="hover:text-[#ebd6bd] transition-colors">
+            Vijayanagara Empire
           </Link>
           <span className="text-stone-700">/</span>
           <span className="text-[#FFF0D4]">{subpage.title}</span>
@@ -120,7 +120,7 @@ export default async function VedicPeriodSubpage({
               {subpage.hook}
             </p>
           </div>
-          <div className="lg:col-span-5 relative h-64 md:h-80 w-full overflow-hidden rounded-xl border border-[#a38560]/30 shadow-[0_12px_40px_rgba(0,0,0,0.6)]">
+          <div className="lg:col-span-5 relative h-64 md:h-80 w-full overflow-hidden rounded-xl border border-[#a38560]/30 shadow-[0_12px_40px_rgba(0,0,0,0.6)] bg-stone-900">
             <Image
               src={subpage.image}
               alt={subpage.title}
@@ -132,6 +132,48 @@ export default async function VedicPeriodSubpage({
             <div className="absolute inset-0 bg-linear-to-t from-stone-950/60 to-transparent pointer-events-none" />
           </div>
         </div>
+
+        {/* Eyewitness Testimony Highlights on Capital and Economy pages */}
+        {(slug === "capital" || slug === "economy") && (
+          <div className="mb-16 bg-amber-950/15 border border-[#a38560]/20 rounded-xl p-6 backdrop-blur-md relative overflow-hidden">
+            <span
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
+              className="absolute top-4 right-4 text-[9px] font-bold tracking-[0.2em] text-[#d16c3d]/40 uppercase pointer-events-none"
+            >
+              EYEWITNESS CHRONICLES
+            </span>
+            <h3
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
+              className="text-xs font-bold uppercase tracking-[0.2em] text-[#d16c3d] mb-6"
+            >
+              Accounts of Foreign Observers
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <blockquote className="border-l-2 border-[#d16c3d]/40 pl-4 flex flex-col gap-2">
+                <p
+                  style={{ fontFamily: "var(--font-cormorant), serif" }}
+                  className="text-sm text-stone-300 italic leading-relaxed"
+                >
+                  &ldquo;The city is circumscribed by a massive stone wall of sixty miles, containing gates of immense strength, and its ruler commands ninety thousand men fit to bear arms.&rdquo;
+                </p>
+                <cite className="text-[10px] text-stone-400 font-bold uppercase tracking-wider not-italic">
+                  &mdash; Niccol&ograve; de&apos; Conti, c. 1420 CE
+                </cite>
+              </blockquote>
+              <blockquote className="border-l-2 border-[#d16c3d]/40 pl-4 flex flex-col gap-2">
+                <p
+                  style={{ fontFamily: "var(--font-cormorant), serif" }}
+                  className="text-sm text-stone-300 italic leading-relaxed"
+                >
+                  &ldquo;The rose is sold everywhere... I counted seven concentric walls, with markets and bazaars of gold and gems that are the richest in the world.&rdquo;
+                </p>
+                <cite className="text-[10px] text-stone-400 font-bold uppercase tracking-wider not-italic">
+                  &mdash; Abdur Razzaq, 1443 CE
+                </cite>
+              </blockquote>
+            </div>
+          </div>
+        )}
 
         {/* Sections Listing */}
         <div className="space-y-20">
@@ -189,22 +231,66 @@ export default async function VedicPeriodSubpage({
           ))}
         </div>
 
+        {/* Registry Alert: Anachronism Check */}
+        <div className="mt-16 bg-red-950/10 border border-red-900/20 rounded-xl p-6 relative overflow-hidden">
+          <div className="absolute top-4 right-4 text-[9px] font-bold tracking-[0.2em] text-red-500/40 uppercase">
+            REGISTRY ALERT
+          </div>
+          <h3
+            style={{ fontFamily: "var(--font-cinzel), serif" }}
+            className="mb-3 text-[10px] font-bold uppercase tracking-widest text-red-400 flex items-center gap-2"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+            Anachronism Warning & Authenticity
+          </h3>
+          <p
+            style={{ fontFamily: "var(--font-cormorant), serif" }}
+            className="text-sm text-stone-400 leading-relaxed italic"
+          >
+            Warning: The following items represent historical anachronisms for the Vijayanagara era and must be excluded from reconstructions: Mughal court dress, Rajput-style forts, 17th-century Maratha-style architecture, or any implication that the empire fell to the Mughals (it did not). Note on Gunpowder: Firearm and artillery adoption is documented *only* from the 16th century (Krishnadevaraya&apos;s era onwards). Do not project matchlocks or cannons into the Sangama or early Saluva phases (before c. 1500 CE). Islamic architectural fusions (such as the Queen&apos;s Bath pointed arches or Elephant Stables domes) are historically verified and authentic.
+          </p>
+        </div>
+
+        {/* Closing Registry Note for final subpage */}
+        {slug === "decline" && (
+          <div className="mt-16 bg-stone-950/40 border border-[#a38560]/20 rounded-xl p-6 relative overflow-hidden backdrop-blur-xs text-center shadow-inner">
+            <span
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
+              className="absolute top-4 right-4 text-[9px] font-bold tracking-[0.2em] text-[#a38560]/40 uppercase pointer-events-none"
+            >
+              ARCHIVE END
+            </span>
+            <h3
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
+              className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[#ebd6bd]/80"
+            >
+              Registry Status
+            </h3>
+            <p
+              style={{ fontFamily: "var(--font-cormorant), serif" }}
+              className="text-sm text-stone-400 leading-relaxed italic"
+            >
+              Closing Note: The Vijayanagara Empire is the final era currently compiled within this registry. The story of South India continues beyond 1646 CE (into the Nayaka kingdoms, Maratha Thanjavur, and the Mughal and colonial periods) but those pages are not yet built.
+            </p>
+          </div>
+        )}
+
         {/* Subpage Footer Navigation */}
         <div className="mt-24 border-t border-[#a38560]/20 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          {slug === "origins" ? (
+          {slug === "capital" ? (
             <Link
-              href="/indus-valley/decline"
+              href="/chola-empire/economy"
               style={{ fontFamily: "var(--font-cinzel), serif" }}
               className="group flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#a38560] hover:text-[#ebd6bd] transition-colors"
             >
               <span className="inline-block transition-transform duration-300 group-hover:-translate-x-1">
                 ←
               </span>
-              Previous Era: Decline of IVC
+              Previous Era: Economy (Chola Empire)
             </Link>
           ) : (
             <Link
-              href="/vedic-period"
+              href="/vijayanagara-empire"
               style={{ fontFamily: "var(--font-cinzel), serif" }}
               className="group flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#a38560] hover:text-[#ebd6bd] transition-colors"
             >
@@ -217,7 +303,7 @@ export default async function VedicPeriodSubpage({
 
           {nextSubpage ? (
             <Link
-              href={`/vedic-period/${nextSubpage.id}`}
+              href={`/vijayanagara-empire/${nextSubpage.id}`}
               className="group text-right flex flex-col items-center md:items-end gap-1.5"
             >
               <span className="text-[9px] font-bold tracking-widest text-[#d16c3d] uppercase">
@@ -234,23 +320,18 @@ export default async function VedicPeriodSubpage({
               </span>
             </Link>
           ) : (
-            <Link
-              href="/maurya-empire"
-              className="group text-right flex flex-col items-center md:items-end gap-1.5"
-            >
-              <span className="text-[9px] font-bold tracking-widest text-[#d16c3d] uppercase">
-                Next Era
+            <div className="group text-right flex flex-col items-center md:items-end gap-1.5 opacity-60">
+              <span className="text-[9px] font-bold tracking-widest text-stone-500 uppercase">
+                End of Timeline
               </span>
               <span
                 style={{ fontFamily: "var(--font-cinzel), serif" }}
-                className="text-sm font-bold tracking-wider text-[#ebd6bd] group-hover:text-amber-200 transition-colors flex items-center gap-2"
+                className="text-sm font-bold tracking-wider text-stone-400 flex items-center gap-2 select-none"
               >
-                The Maurya Empire
-                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5">
-                  →
-                </span>
+                No Later Eras Compiled
+                <span>→</span>
               </span>
-            </Link>
+            </div>
           )}
         </div>
 

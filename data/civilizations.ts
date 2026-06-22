@@ -14,13 +14,13 @@ export const civilizations = [
     summary:
       "One of the world's earliest urban civilizations, known for its planned cities, engineering, and extensive trade networks.",
     greatestAchievement: "Advanced Urban Planning",
-    image: "./IVC.png",
+    image: "/Civilizations&Empire/IVC.png",
   },
 
   {
     id: "vedic-period",
-    name: "Vedic Civilization",
-    period: "1500 BCE – 600 BCE",
+    name: "Vedic Period",
+    period: "1500 BCE – 500 BCE",
     region: "Northern India",
     majorCities: ["Kurukshetra", "Kashi", "Hastinapur"],
     knownFor: [
@@ -32,7 +32,7 @@ export const civilizations = [
     summary:
       "A foundational period in Indian history that shaped religion, philosophy, language, and social institutions.",
     greatestAchievement: "Composition of the Vedas",
-    image: "/image.jpg",
+    image: "/Civilizations&Empire/VP.png",
   },
 
   {
@@ -50,7 +50,7 @@ export const civilizations = [
     summary:
       "The first major empire to unite much of India under a centralized administration.",
     greatestAchievement: "Unification of the Indian Subcontinent",
-    image: "/image.jpg",
+    image: "/Civilizations&Empire/ME.png",
   },
 
   {
@@ -68,7 +68,7 @@ export const civilizations = [
     summary:
       "Often called the Golden Age of India due to major achievements in science, mathematics, and culture.",
     greatestAchievement: "Advancements in Mathematics and Astronomy",
-    image: "/image.jpg",
+    image: "/Civilizations&Empire/GE.png",
   },
 
   {
@@ -86,7 +86,7 @@ export const civilizations = [
     summary:
       "A powerful South Indian dynasty that laid the foundation for Dravidian temple architecture.",
     greatestAchievement: "Development of Early Dravidian Temples",
-    image: "/image.jpg",
+    image: "/Civilizations&Empire/PallavaDynasty.png",
   },
 
   {
@@ -104,7 +104,7 @@ export const civilizations = [
     summary:
       "One of India's greatest maritime empires, famous for trade, naval dominance, and magnificent temples.",
     greatestAchievement: "Creation of a Powerful Maritime Empire",
-    image: "/image.jpg",
+    image: "/Civilizations&Empire/CholaDynasty.png",
   },
 
   {
@@ -122,6 +122,6 @@ export const civilizations = [
     summary:
       "A prosperous South Indian empire that preserved and promoted Indian culture, art, and architecture.",
     greatestAchievement: "Construction of the City of Hampi",
-    image: "/image.jpg",
+    image: "/Civilizations&Empire/VijanagaraEmpire.png",
   },
 ];

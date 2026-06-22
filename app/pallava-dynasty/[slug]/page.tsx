@@ -3,23 +3,23 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Cinzel, Cormorant_Garamond } from "next/font/google";
-import { vedicSubpages } from "@/data/vedicPeriodData";
+import { pallavaSubpages } from "@/data/pallavaDynastyData";
 
 // Next.js 16/React 19 Instant Navigation configuration
 export const unstable_instant = {
   prefetch: "runtime",
   samples: [
     { params: { slug: "origins" } },
-    { params: { slug: "tribes-kingdoms" } },
-    { params: { slug: "society" } },
-    { params: { slug: "religion" } },
-    { params: { slug: "literature" } },
-    { params: { slug: "end-of-vedic-age" } },
+    { params: { slug: "cities" } },
+    { params: { slug: "architecture" } },
+    { params: { slug: "rulers" } },
+    { params: { slug: "military-trade" } },
+    { params: { slug: "culture" } },
   ],
 };
 
 export async function generateStaticParams() {
-  return vedicSubpages.map((subpage) => ({
+  return pallavaSubpages.map((subpage) => ({
     slug: subpage.id,
   }));
 }
@@ -30,10 +30,10 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const subpage = vedicSubpages.find((p) => p.id === slug);
+  const subpage = pallavaSubpages.find((p) => p.id === slug);
   return {
-    title: subpage ? `${subpage.title} | Vedic Period` : "Vedic Period Archive",
-    description: subpage ? subpage.hook : "Detailed archaeological registry of the Vedic era.",
+    title: subpage ? `${subpage.title} | Pallava Dynasty` : "Pallava Dynasty Archive",
+    description: subpage ? subpage.hook : "Detailed historical registry of the Pallava Dynasty.",
   };
 }
 
@@ -49,24 +49,24 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
 });
 
-export default async function VedicPeriodSubpage({
+export default async function PallavaDynastySubpage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const subpageIndex = vedicSubpages.findIndex((p) => p.id === slug);
+  const subpageIndex = pallavaSubpages.findIndex((p) => p.id === slug);
   
   if (subpageIndex === -1) {
     notFound();
   }
 
-  const subpage = vedicSubpages[subpageIndex];
+  const subpage = pallavaSubpages[subpageIndex];
   
   // Calculate next subpage for navigation footer
   const nextSubpage =
-    subpageIndex < vedicSubpages.length - 1
-      ? vedicSubpages[subpageIndex + 1]
+    subpageIndex < pallavaSubpages.length - 1
+      ? pallavaSubpages[subpageIndex + 1]
       : null;
 
   return (
@@ -91,8 +91,8 @@ export default async function VedicPeriodSubpage({
             Home
           </Link>
           <span className="text-stone-700">/</span>
-          <Link href="/vedic-period" className="hover:text-[#ebd6bd] transition-colors">
-            Vedic Period
+          <Link href="/pallava-dynasty" className="hover:text-[#ebd6bd] transition-colors">
+            Pallava Dynasty
           </Link>
           <span className="text-stone-700">/</span>
           <span className="text-[#FFF0D4]">{subpage.title}</span>
@@ -120,7 +120,7 @@ export default async function VedicPeriodSubpage({
               {subpage.hook}
             </p>
           </div>
-          <div className="lg:col-span-5 relative h-64 md:h-80 w-full overflow-hidden rounded-xl border border-[#a38560]/30 shadow-[0_12px_40px_rgba(0,0,0,0.6)]">
+          <div className="lg:col-span-5 relative h-64 md:h-80 w-full overflow-hidden rounded-xl border border-[#a38560]/30 shadow-[0_12px_40px_rgba(0,0,0,0.6)] bg-stone-900">
             <Image
               src={subpage.image}
               alt={subpage.title}
@@ -132,6 +132,64 @@ export default async function VedicPeriodSubpage({
             <div className="absolute inset-0 bg-linear-to-t from-stone-950/60 to-transparent pointer-events-none" />
           </div>
         </div>
+
+        {/* Dravidian Architectural Glossary on Cities & Architecture pages */}
+        {(slug === "architecture" || slug === "cities") && (
+          <div className="mb-16 bg-amber-950/15 border border-[#a38560]/20 rounded-xl p-6 backdrop-blur-md">
+            <h3
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
+              className="text-xs font-bold uppercase tracking-[0.2em] text-[#d16c3d] mb-6"
+            >
+              Dravidian Architectural Glossary
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 text-xs text-stone-300">
+              {[
+                { term: "Vimana", definition: "The soaring, tiered tower constructed directly over the inner sanctum." },
+                { term: "Gopuram", definition: "The monumental, elaborately sculpted entrance gatehouse tower of the temple complex." },
+                { term: "Garbhagriha", definition: "The innermost sanctum chamber where the primary deity icon is housed." },
+                { term: "Mandapa", definition: "A pillared, open or closed assembly hall preceding the main sanctum." },
+                { term: "Ratha", definition: "A monolithic temple shrine carved in the shape of a ceremonial chariot from a single boulder." },
+              ].map((item, idx) => (
+                <div key={idx} className="border-l-2 border-[#d16c3d]/30 pl-4 flex flex-col gap-1">
+                  <span className="text-[#ebd6bd] font-bold uppercase tracking-wider text-[11px]">{item.term}</span>
+                  <span className="text-[10px] text-stone-400 leading-relaxed">{item.definition}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Handover Alert on Rulers page */}
+        {slug === "rulers" && (
+          <div className="mb-16 bg-amber-950/20 border border-[#a38560]/30 rounded-xl p-6 relative overflow-hidden backdrop-blur-md">
+            <span
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
+              className="absolute top-4 right-4 text-[9px] font-bold tracking-[0.2em] text-[#d16c3d]/40 uppercase pointer-events-none"
+            >
+              HISTORICAL TRANSITION
+            </span>
+            <h3
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
+              className="mb-3 text-[11px] font-bold uppercase tracking-widest text-[#ebd6bd]"
+            >
+              Aditya I&apos;s Conquest of Kanchi (c. 875 CE)
+            </h3>
+            <p
+              style={{ fontFamily: "var(--font-cormorant), serif" }}
+              className="text-stone-300 leading-relaxed text-sm italic mb-4"
+            >
+              Aditya I&apos;s conquest of Kanchipuram is the handover moment of southern sovereignty. His victory ended centuries of Pallava dynastic power, transferring control of Tondaimandalam to the rising Chola Empire.
+            </p>
+            <Link
+              href="/chola-empire/rise"
+              style={{ fontFamily: "var(--font-cinzel), serif" }}
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#d16c3d] hover:text-[#ebd6bd] transition-colors"
+            >
+              Explore Chola Rise
+              <span>→</span>
+            </Link>
+          </div>
+        )}
 
         {/* Sections Listing */}
         <div className="space-y-20">
@@ -189,22 +247,42 @@ export default async function VedicPeriodSubpage({
           ))}
         </div>
 
+        {/* Registry Alert: Anachronism Check */}
+        <div className="mt-16 bg-red-950/10 border border-red-900/20 rounded-xl p-6 relative overflow-hidden">
+          <div className="absolute top-4 right-4 text-[9px] font-bold tracking-[0.2em] text-red-500/40 uppercase">
+            REGISTRY ALERT
+          </div>
+          <h3
+            style={{ fontFamily: "var(--font-cinzel), serif" }}
+            className="mb-3 text-[10px] font-bold uppercase tracking-widest text-red-400 flex items-center gap-2"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+            Anachronism Warning & Authenticity
+          </h3>
+          <p
+            style={{ fontFamily: "var(--font-cormorant), serif" }}
+            className="text-sm text-stone-400 leading-relaxed italic"
+          >
+            Warning: The following items represent historical anachronisms for the Pallava era and must be excluded from all reconstructions: later Chola or Vijayanagara temple styles (those derived from the Pallava style, not the other way around), Mughal/Islamic arches or motifs, North Indian nagara-style temple towers (shikharas of the northern type), and literal flying or multi-armed deities. Depict only architectural and iconographic forms verified for 7th–8th century South India.
+          </p>
+        </div>
+
         {/* Subpage Footer Navigation */}
         <div className="mt-24 border-t border-[#a38560]/20 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           {slug === "origins" ? (
             <Link
-              href="/indus-valley/decline"
+              href="/gupta-empire/religion-and-decline"
               style={{ fontFamily: "var(--font-cinzel), serif" }}
               className="group flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#a38560] hover:text-[#ebd6bd] transition-colors"
             >
               <span className="inline-block transition-transform duration-300 group-hover:-translate-x-1">
                 ←
               </span>
-              Previous Era: Decline of IVC
+              Previous Era: End of Gupta Empire
             </Link>
           ) : (
             <Link
-              href="/vedic-period"
+              href="/pallava-dynasty"
               style={{ fontFamily: "var(--font-cinzel), serif" }}
               className="group flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#a38560] hover:text-[#ebd6bd] transition-colors"
             >
@@ -217,7 +295,7 @@ export default async function VedicPeriodSubpage({
 
           {nextSubpage ? (
             <Link
-              href={`/vedic-period/${nextSubpage.id}`}
+              href={`/pallava-dynasty/${nextSubpage.id}`}
               className="group text-right flex flex-col items-center md:items-end gap-1.5"
             >
               <span className="text-[9px] font-bold tracking-widest text-[#d16c3d] uppercase">
@@ -235,7 +313,7 @@ export default async function VedicPeriodSubpage({
             </Link>
           ) : (
             <Link
-              href="/maurya-empire"
+              href="/chola-empire/rise"
               className="group text-right flex flex-col items-center md:items-end gap-1.5"
             >
               <span className="text-[9px] font-bold tracking-widest text-[#d16c3d] uppercase">
@@ -245,7 +323,7 @@ export default async function VedicPeriodSubpage({
                 style={{ fontFamily: "var(--font-cinzel), serif" }}
                 className="text-sm font-bold tracking-wider text-[#ebd6bd] group-hover:text-amber-200 transition-colors flex items-center gap-2"
               >
-                The Maurya Empire
+                The Chola Empire
                 <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5">
                   →
                 </span>

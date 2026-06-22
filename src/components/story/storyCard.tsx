@@ -1,6 +1,7 @@
 "use client";
 
 import { Cinzel, Cormorant_Garamond } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 
 const cinzel = Cinzel({ subsets: ["latin"], weight: ["700"], variable: "--font-cinzel" });
@@ -29,9 +30,14 @@ export default function StoryCard({ data, index }: StoryCardProps) {
 
       {/* 1. CINEMATIC IMAGE */}
       <div className="card-image-container absolute inset-0 w-full h-full z-10 origin-center overflow-hidden">
-        <img
+        <Image
           src={data.image}
           alt={data.name}
+          onError={(e) => {
+            e.currentTarget.src = "./image.jpg";
+          }}
+          fill
+          sizes="100vw"
           className="w-full h-full object-cover filter brightness-[0.6] contrast-[1.1]"
         />
       </div>
