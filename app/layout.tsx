@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import SiteShell from "@/src/components/SiteShell";
 import { Analytics } from '@vercel/analytics/next';
+import { Suspense } from "react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -36,7 +37,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <SiteShell>{children}</SiteShell>
+        <Suspense>
+          <SiteShell>{children}</SiteShell>
+        </Suspense>
       </body>
 
       <Analytics />
