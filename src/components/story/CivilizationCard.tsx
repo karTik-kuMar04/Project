@@ -42,7 +42,7 @@ export default function CivilizationCard({ data }: { data: Civilization }) {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex flex-col p-6 flex-grow">
+      <div className="flex flex-col p-6 grow">
         <h3 
           style={{ fontFamily: "var(--font-cinzel), serif" }} 
           className={`${cinzel.variable} mb-1 text-2xl tracking-wide text-[#FFF0D4]`}
@@ -56,7 +56,7 @@ export default function CivilizationCard({ data }: { data: Civilization }) {
 
         <p 
           style={{ fontFamily: "var(--font-cormorant), serif" }} 
-          className={`${cormorant.variable} mb-6 flex-grow text-lg italic leading-relaxed text-stone-300 font-light`}
+          className={`${cormorant.variable} mb-6 grow text-lg italic leading-relaxed text-stone-300 font-light`}
         >
           {data.summary}
         </p>

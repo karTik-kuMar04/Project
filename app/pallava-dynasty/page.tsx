@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Cinzel, Cormorant_Garamond } from "next/font/google";
 import { pallavaSubpages } from "@/data/pallavaDynastyData";
+import EraChapterStack from "@/src/components/ui/EraChapterStack";
 
 // Next.js 16/React 19 Instant Navigation configuration
 export const unstable_instant = { prefetch: "static" };
@@ -27,11 +28,11 @@ const cormorant = Cormorant_Garamond({
 export default function PallavaDynastyHub() {
   return (
     <main
-      className={`relative min-h-screen bg-[#090604] py-20 px-6 md:px-12 overflow-hidden ${cinzel.variable} ${cormorant.variable}`}
+      className={`relative min-h-screen bg-[#090604] py-20 px-6 md:px-12 ${cinzel.variable} ${cormorant.variable}`}
     >
       {/* Background Ambient Glows */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#21130b_0%,#110804_50%,#090604_100%)] pointer-events-none" />
-      <div className="absolute left-1/2 top-1/4 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#b25329]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute left-1/2 top-1/4 h-125 w-125 -translate-x-1/2 rounded-full bg-[#b25329]/5 blur-[120px] pointer-events-none" />
 
       {/* Floating Dust Effect (CSS) */}
       <div className="dust absolute inset-0 pointer-events-none" />
@@ -91,64 +92,7 @@ export default function PallavaDynastyHub() {
           </p>
         </div>
 
-        {/* Grid of Six Subpage Cards */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {pallavaSubpages.map((subpage, index) => (
-            <Link
-              key={subpage.id}
-              href={`/pallava-dynasty/${subpage.id}`}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-[#a38560]/20 bg-stone-950/60 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-[#D4AF37]/60 hover:shadow-[0_8px_30px_rgba(212,175,55,0.15)]"
-            >
-              {/* Card Header Image */}
-              <div className="relative h-48 w-full overflow-hidden border-b border-[#a38560]/20 bg-stone-900">
-                <Image
-                  src={subpage.image}
-                  alt={subpage.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-110 opacity-70 group-hover:opacity-100"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                {/* Visual Vignette gradient */}
-                <div className="absolute inset-0 bg-linear-to-t from-stone-950/90 to-transparent pointer-events-none" />
-
-                {/* Chapter Number Badge */}
-                <div className="absolute bottom-4 left-6">
-                  <span className="bg-[#090604]/80 border border-[#d16c3d]/40 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#d16c3d] backdrop-blur-sm rounded-sm">
-                    Record 0{index + 1}
-                  </span>
-                </div>
-              </div>
-
-              {/* Card Body Content */}
-              <div className="flex flex-col p-6 flex-grow">
-                <h3
-                  style={{ fontFamily: "var(--font-cinzel), serif" }}
-                  className="mb-3 text-xl font-bold tracking-wide text-[#FFF0D4] group-hover:text-amber-200 transition-colors duration-300"
-                >
-                  {subpage.title}
-                </h3>
-
-                <p
-                  style={{ fontFamily: "var(--font-cormorant), serif" }}
-                  className="mb-6 flex-grow text-stone-300 leading-relaxed font-light italic text-[1.05rem]"
-                >
-                  {subpage.hook}
-                </p>
-
-                {/* Bottom CTA text */}
-                <div
-                  style={{ fontFamily: "var(--font-cinzel), serif" }}
-                  className="mt-auto flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-[#d16c3d] group-hover:text-[#f3a97e] transition-colors duration-300"
-                >
-                  Examine Log
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <EraChapterStack title="The Pallava Dynasty" chapters={pallavaSubpages} era="pallava-dynasty" />
       </div>
     </main>
   );
