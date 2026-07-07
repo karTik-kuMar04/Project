@@ -17,7 +17,7 @@ export const guptaSubpages: GuptaSubpage[] = [
     id: "dynasty",
     title: "The Dynasty: Five Kings to a Golden Age",
     hook: "Seven kings and three hundred years — including the one whose “Golden Age” still gives the era its name.",
-    image: "/images/dynasty.png",
+    image: "/images/dynasty.jpeg",
     sections: [
       {
         title: "Humble beginnings (c. 240–335 CE)",
@@ -61,7 +61,7 @@ export const guptaSubpages: GuptaSubpage[] = [
     id: "cities-daily-life",
     title: "Cities & Daily Life",
     hook: "Six cities, one empire, and a fairly good idea of what people ate, wore and worshipped between them.",
-    image: "/images/cities-daily-life.png",
+    image: "/images/cities.png",
     sections: [
       {
         title: "The river empire",
@@ -101,7 +101,7 @@ export const guptaSubpages: GuptaSubpage[] = [
     id: "government",
     title: "Government & the Guild State",
     hook: "A 26-province empire run by princes, bureaucrats — and a council that included the local merchant guild.",
-    image: "/images/government.png",
+    image: "/images/Government.png",
     sections: [
       {
         title: "The chain of command",
@@ -138,7 +138,7 @@ export const guptaSubpages: GuptaSubpage[] = [
     id: "economy",
     title: "Trade, Coins & Commerce",
     hook: "Gold coins minted in Pataliputra have turned up as far away as Java.",
-    image: "/images/economy.png",
+    image: "/images/tradeCoins.webp",
     sections: [
       {
         title: "Farming the floodplain",
@@ -182,7 +182,7 @@ export const guptaSubpages: GuptaSubpage[] = [
     id: "golden-age-of-knowledge",
     title: "Science, Sanskrit & Stone",
     hook: "Zero, a 70-foot brick tower, and a poet-king’s court: this is what “Golden Age” actually means.",
-    image: "/images/golden-age-of-knowledge.png",
+    image: "/images/GoldenAgeKnowledge.jpeg",
     sections: [
       {
         title: "The mathematicians and astronomers",
@@ -227,7 +227,7 @@ export const guptaSubpages: GuptaSubpage[] = [
     id: "religion-and-decline",
     title: "Gods, Huns & the Fall",
     hook: "A famously tolerant empire that funded Buddhist monks and carved Hindu gods in stone — and still couldn’t survive the Huns.",
-    image: "/images/religion-and-decline.png",
+    image: "/images/religion-anddecline.png",
     sections: [
       {
         title: "A pluralist court",

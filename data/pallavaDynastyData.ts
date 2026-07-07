@@ -17,7 +17,7 @@ export const pallavaSubpages: PallavaSubpage[] = [
     id: "origins",
     title: "Origins & the Tamil South",
     hook: "Nobody agrees where the Pallavas came from. What is certain is how decisively they arrived.",
-    image: "/images/origins.png",
+    image: "/images/pallava_origin.jpeg",
     sections: [
       {
         title: "The origin debate",
@@ -53,7 +53,7 @@ export const pallavaSubpages: PallavaSubpage[] = [
     id: "cities",
     title: "Two Capitals",
     hook: "One city was the greatest learning centre in South India. The other was carved out of living rock by the sea.",
-    image: "/images/cities.png",
+    image: "/images/cities.jpeg",
     sections: [
       {
         title: "Kanchipuram — nagareshu Kanchi",
@@ -81,7 +81,7 @@ export const pallavaSubpages: PallavaSubpage[] = [
     id: "architecture",
     title: "The Architecture Revolution",
     hook: "In less than a century, South Indian architecture went from cave to carved ratha to soaring stone temple.",
-    image: "/images/architecture.png",
+    image: "/images/architecture.jpeg",
     sections: [
       {
         title: "Cave temples — the Mahendra style",
@@ -118,7 +118,7 @@ export const pallavaSubpages: PallavaSubpage[] = [
     id: "rulers",
     title: "The Great Kings",
     hook: "A king who wrote Sanskrit plays. His son who sacked a Chalukya capital. His grandson who built a temple that changed everything.",
-    image: "/images/rulers.png",
+    image: "/images/great_kings.jpeg",
     sections: [
       {
         title: "Mahendravarman I (c. 600–630 CE)",
@@ -156,7 +156,7 @@ export const pallavaSubpages: PallavaSubpage[] = [
     id: "military-trade",
     title: "Sea Power & the Chalukya Wars",
     hook: "While northern India worried about cavalry, the Pallavas were building a navy.",
-    image: "/images/military-trade.png",
+    image: "/images/military-trade.jpeg",
     sections: [
       {
         title: "The Chalukya conflict",
@@ -192,7 +192,7 @@ export const pallavaSubpages: PallavaSubpage[] = [
     id: "culture",
     title: "Faith, Bhakti & Legacy",
     hook: "Under the Pallavas, the Tamil bhakti movement found its temples — and its audience.",
-    image: "/images/culture.png",
+    image: "/images/culture.jpeg",
     sections: [
       {
         title: "A pluralist religious landscape",
