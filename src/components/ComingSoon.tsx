@@ -146,6 +146,7 @@ export default function ComingSoon() {
 
   return (
     <section
+        id="coming-soon"
       ref={sectionRef}
       className={`relative overflow-hidden bg-[#090604] px-4 sm:px-6 py-24 md:py-32 ${cinzel.variable} ${cormorant.variable}`}
     >
