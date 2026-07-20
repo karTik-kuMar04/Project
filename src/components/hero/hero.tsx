@@ -27,7 +27,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 pointer-events-auto">
         <Galaxy 
           mouseRepulsion
-          mouseInteraction
+          mouseInteraction={false}
           density={1}
           glowIntensity={0.3}
           saturation={0}
@@ -96,24 +96,6 @@ export default function Hero() {
           Journey through empires, warriors, scholars,
           dynasties and civilizations that made India Great.
         </motion.p>
-
-        {/* BUTTON: Classic Bronze Frame with Hover Glow States */}
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          whileHover={{
-            scale: 1.02,
-            borderColor: "#D4AF37",
-            color: "#FFF0D4",
-            backgroundColor: "rgba(212, 175, 55, 0.05)",
-            boxShadow: "0 0 30px rgba(178, 83, 41, 0.25)",
-          }}
-          whileTap={{ scale: 0.98 }}
-          style={{ fontFamily: "var(--font-cinzel), serif" }}
-          className="mt-12 border border-[#a38560]/40 px-12 py-5 text-[#ebd6bd] backdrop-blur-md uppercase tracking-[0.25em] text-xs font-bold transition-all duration-300 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.4)] pointer-events-auto"
-        >
-          Begin Exploration
-        </motion.button>
       </div>
       
       {/* Screen Edge Vignette */}

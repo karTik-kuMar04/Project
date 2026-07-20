@@ -1,6 +1,7 @@
 "use client";
 import Hero from "@/src/components/hero/hero";
 import StorySection from "@/src/components/story/StorySection";
+import ComingSoon from "@/src/components/ComingSoon";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <StorySection>
         <Hero />
       </StorySection>
+      <ComingSoon />
     </main>
   );
 }
