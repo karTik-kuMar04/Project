@@ -17,7 +17,7 @@ export const cholaSubpages: CholaSubpage[] = [
     id: "rise",
     title: "Empire of the South",
     hook: "From a minor chieftain who seized Thanjavur in 848 CE to an emperor who sent fleets to Sumatra — in 200 years.",
-    image: "/images/rise.png",
+    image: "/images/rise.jpeg",
     sections: [
       {
         title: "The founding and early expansion",
@@ -52,7 +52,7 @@ export const cholaSubpages: CholaSubpage[] = [
     id: "temples",
     title: "The Great Temples",
     hook: "The tallest structure in India when it was built in 1010 CE. Its shadow still falls across Tamil Nadu.",
-    image: "/images/temples.png",
+    image: "/images/temple.jpeg",
     sections: [
       {
         title: "Brihadisvara Temple, Thanjavur",
@@ -88,7 +88,7 @@ export const cholaSubpages: CholaSubpage[] = [
     id: "naval-power",
     title: "Masters of the Sea",
     hook: "In 1025 CE a Chola fleet crossed the Bay of Bengal and attacked Sumatra. Nobody had done that before.",
-    image: "/images/naval-power.png",
+    image: "/images/naval-power.jpeg",
     sections: [
       {
         title: "Building a navy",
@@ -122,7 +122,7 @@ export const cholaSubpages: CholaSubpage[] = [
     id: "administration",
     title: "How the Empire Ran",
     hook: "Village councils, merchant guilds and temple records: the Cholas built a bureaucracy that ran without printing.",
-    image: "/images/administration.png",
+    image: "/images/administration.jpeg",
     sections: [
       {
         title: "A layered administration",
@@ -157,7 +157,7 @@ export const cholaSubpages: CholaSubpage[] = [
     id: "culture",
     title: "Bronze, Dance & the Nataraja",
     hook: "The bronze Nataraja — Shiva as lord of the cosmic dance — was a Chola invention.",
-    image: "/images/culture_chola.png",
+    image: "/images/culture_chola.jpeg",
     sections: [
       {
         title: "The Chola bronze tradition",
@@ -191,7 +191,7 @@ export const cholaSubpages: CholaSubpage[] = [
     id: "economy",
     title: "The Rice Bowl & the Sea",
     hook: "The Cauvery delta fed the army. The Bay of Bengal paid for the temples.",
-    image: "/images/economy_chola.png",
+    image: "/images/economy_chola.jpeg",
     sections: [
       {
         title: "Cauvery agriculture",

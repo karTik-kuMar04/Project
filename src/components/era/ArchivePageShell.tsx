@@ -66,7 +66,7 @@ export function ArchivePageShell({
           src={image}
           alt={title}
           fill
-          className="object-cover"
+          className=""
           priority
           sizes="100vw"
         />

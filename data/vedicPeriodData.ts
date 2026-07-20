@@ -17,7 +17,7 @@ export const vedicSubpages: VedicSubpage[] = [
     id: "origins",
     title: "Where They Came From",
     hook: "A debate that has divided historians for decades: did the Vedic people arrive from outside, or were they always here?",
-    image: "/image.jpg",
+    image: "/images/aryans_origin.png",
     sections: [
       {
         title: "The mainstream academic view: migration",
@@ -56,7 +56,7 @@ export const vedicSubpages: VedicSubpage[] = [
     id: "tribes-kingdoms",
     title: "Tribe to Kingdom",
     hook: "From scattered cattle-herding tribes to India’s first organised kingdoms — in 600 years.",
-    image: "/image.jpg",
+    image: "/images/vedic-devlopment.png",
     sections: [
       {
         title: "Early Vedic: tribal society in the Punjab",
@@ -102,7 +102,7 @@ export const vedicSubpages: VedicSubpage[] = [
     id: "society",
     title: "Society & the Varna System",
     hook: "A society that began relatively open — and gradually closed itself into a hierarchy.",
-    image: "/image.jpg",
+    image: "/images/vedic-society.png",
     sections: [
       {
         title: "Early Vedic society: more open than later",
@@ -142,7 +142,7 @@ export const vedicSubpages: VedicSubpage[] = [
     id: "religion",
     title: "Gods, Fire & Sacrifice",
     hook: "No temples, no idols — just fire, hymns and the gods who listened.",
-    image: "/image.jpg",
+    image: "/images/vedic-religon.jpg",
     sections: [
       {
         title: "The Vedic pantheon",
@@ -184,7 +184,7 @@ export const vedicSubpages: VedicSubpage[] = [
     id: "literature",
     title: "The Vedas & Their World",
     hook: "Orally transmitted across centuries with extraordinary precision — the oldest surviving religious literature in the world.",
-    image: "/image.jpg",
+    image: "/images/ved's.webp",
     sections: [
       {
         title: "Five chronological strata of Vedic literature",
@@ -230,7 +230,7 @@ export const vedicSubpages: VedicSubpage[] = [
     id: "end-of-vedic-age",
     title: "Cities Rise, Vedas Fade",
     hook: "The end of the Vedic age was not a fall — it was a transformation into something more complex.",
-    image: "/image.jpg",
+    image: "/images/vedic-end.png",
     sections: [
       {
         title: "Urbanisation and the Mahajanapadas",

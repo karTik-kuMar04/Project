@@ -17,7 +17,7 @@ export const vijayanagaraSubpages: VijayanagaraSubpage[] = [
     id: "capital",
     title: "Hampi: City of the Gods",
     hook: "Travelers called it the richest city in the world. Today it is a UNESCO ruin across 26 square kilometres of boulders.",
-    image: "/images/capital.png",
+    image: "/images/hampi.jpeg",
     sections: [
       {
         title: "A city of stone and water",
@@ -53,7 +53,7 @@ export const vijayanagaraSubpages: VijayanagaraSubpage[] = [
     id: "rulers",
     title: "Four Dynasties, One Empire",
     hook: "Sangama, Saluva, Tuluva, Aravidu — four dynasties, one city, and 300 years of Hindu statecraft.",
-    image: "/images/rulers_vijay.png",
+    image: "/images/rulers_vijay.jpeg",
     sections: [
       {
         title: "Sangama (1336–1485): The founders",
@@ -88,7 +88,7 @@ export const vijayanagaraSubpages: VijayanagaraSubpage[] = [
     id: "military",
     title: "War, Elephants & the Cannon",
     hook: "They started with elephants and ended with Portuguese artillery. The Deccan Sultans were always one step ahead.",
-    image: "/images/military_vijay.png",
+    image: "/images/military_vijay.jpeg",
     sections: [
       {
         title: "A multi-ethnic army",
@@ -123,7 +123,7 @@ export const vijayanagaraSubpages: VijayanagaraSubpage[] = [
     id: "economy",
     title: "The Richest Bazaars in the World",
     hook: "Persians, Portuguese, Gujaratis and Arabs all traded in Vijayanagara’s markets. The city had something everyone wanted.",
-    image: "/images/economy_vijay.png",
+    image: "/images/economy_vijay.jpeg",
     sections: [
       {
         title: "Irrigation and agriculture",
@@ -158,7 +158,7 @@ export const vijayanagaraSubpages: VijayanagaraSubpage[] = [
     id: "arts",
     title: "Temples, Music & the Vittala",
     hook: "The Vittala Temple’s stone pillars ring like bells when struck. Nobody knows exactly how.",
-    image: "/images/arts.png",
+    image: "/images/temple_vija.jpeg",
     sections: [
       {
         title: "Architecture: a synthesis of forms",
@@ -194,7 +194,7 @@ export const vijayanagaraSubpages: VijayanagaraSubpage[] = [
     id: "decline",
     title: "Talikota & the Long Fall",
     hook: "In 1565, five sultanates allied against one empire. Vijayanagara never recovered.",
-    image: "/images/decline_vijay.png",
+    image: "/images/decline_vijay.jpeg",
     sections: [
       {
         title: "The Battle of Talikota (January 1565)",

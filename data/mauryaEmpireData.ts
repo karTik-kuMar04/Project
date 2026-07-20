@@ -17,7 +17,7 @@ export const mauryaSubpages: MauryaSubpage[] = [
     id: "chandragupta",
     title: "The Founder: Chandragupta",
     hook: "A 21-year-old with an army, an adviser and a plan to overthrow the most powerful dynasty in India.",
-    image: "/images/chandragupta.png",
+    image: "/images/chandragupta.jpeg",
     sections: [
       {
         title: "Overthrowing the Nandas",
@@ -52,7 +52,7 @@ export const mauryaSubpages: MauryaSubpage[] = [
     id: "pataliputra",
     title: "Pataliputra: Capital of the World",
     hook: "The largest and most sophisticated city in the ancient world had walls made entirely of wood — and they were extraordinary.",
-    image: "/images/pataliputra.png",
+    image: "/images/pataliputra.jpg",
     sections: [
       {
         title: "Scale and layout",
@@ -91,7 +91,7 @@ export const mauryaSubpages: MauryaSubpage[] = [
     id: "military",
     title: "The Military Machine",
     hook: "600,000 infantry. 30,000 cavalry. 9,000 war elephants. And a manual that told you exactly how to deploy them.",
-    image: "/images/military.png",
+    image: "/images/mauryan-army.jpeg",
     sections: [
       {
         title: "The four-part army (chaturanga)",
@@ -139,7 +139,7 @@ export const mauryaSubpages: MauryaSubpage[] = [
     id: "arthashastra",
     title: "Kautilya’s State",
     hook: "The world’s oldest manual of statecraft described a government that was efficient, ruthless and strikingly modern.",
-    image: "/images/arthashastra.png",
+    image: "/images/arthashastra.jpg",
     sections: [
       {
         title: "Chanakya and the Arthashastra",
@@ -187,7 +187,7 @@ export const mauryaSubpages: MauryaSubpage[] = [
     id: "international",
     title: "India Meets the Greek World",
     hook: "While Alexander’s generals carved up his empire in the west, Chandragupta was playing the same game east of the Indus.",
-    image: "/images/international.png",
+    image: "/images/international.jpeg",
     sections: [
       {
         title: "The Seleucid treaty and its consequences",
@@ -235,7 +235,7 @@ export const mauryaSubpages: MauryaSubpage[] = [
     id: "ashoka",
     title: "Ashoka: Warrior to Dharma King",
     hook: "One battle so horrified a king that he changed the entire direction of his empire — and, arguably, of history.",
-    image: "/images/ashoka.png",
+    image: "/images/Ashoka-samrat.jpg",
     sections: [
       {
         title: "Bindusara and the empire before Ashoka",

@@ -267,6 +267,7 @@ export default function EraChapterStack({ chapters = [], era, title }: Props) {
                 <Image
                   src={chapter.image}
                   alt={chapter.title}
+                  loading="eager"
                   fill
                   priority={index < 2}
                   sizes="(max-width: 1024px) 100vw, 58vw"
